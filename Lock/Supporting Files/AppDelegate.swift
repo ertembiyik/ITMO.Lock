@@ -12,8 +12,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let authManager = AuthManager()
-
     var restrictRotation: UIInterfaceOrientationMask = .portrait
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -22,13 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let window = UIWindow(frame: UIScreen.main.bounds)
 
-        if authManager.isSignedIn {
-            authManager.refreshAccessTokenIfNeeded()
-        } else {
-            authManager.getToken()
-        }
-
-        let navVc = UINavigationController(rootViewController: CameraViewController())
+        let navVc = UINavigationController(rootViewController: RegisterViewController())
         window.rootViewController = navVc
         window.makeKeyAndVisible()
         self.window = window
