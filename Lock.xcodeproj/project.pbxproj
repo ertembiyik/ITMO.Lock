@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		A9E6A91A2705F8C00066018E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A9192705F8C00066018E /* AppDelegate.swift */; };
 		A9E6A91C2705F8C00066018E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A91B2705F8C00066018E /* SceneDelegate.swift */; };
-		A9E6A91E2705F8C00066018E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A91D2705F8C00066018E /* ViewController.swift */; };
-		A9E6A9212705F8C00066018E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E6A91F2705F8C00066018E /* Main.storyboard */; };
+		A9E6A91E2705F8C00066018E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A91D2705F8C00066018E /* RegisterViewController.swift */; };
 		A9E6A9232705F8C20066018E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E6A9222705F8C20066018E /* Assets.xcassets */; };
 		A9E6A9262705F8C20066018E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E6A9242705F8C20066018E /* LaunchScreen.storyboard */; };
+		A9E6A9362705FA880066018E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A9352705FA880066018E /* NetworkManager.swift */; };
+		A9E6A9382705FB150066018E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A9372705FB150066018E /* RegisterView.swift */; };
+		A9E6A93A2705FB210066018E /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A9392705FB210066018E /* LogInView.swift */; };
+		A9E6A93C27073ADC0066018E /* ClassRoomsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A93B27073ADC0066018E /* ClassRoomsTableView.swift */; };
+		A9E6A93E27073B190066018E /* ClassRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A93D27073B190066018E /* ClassRoomView.swift */; };
+		A9E6A94027073B510066018E /* StudentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A93F27073B510066018E /* StudentsView.swift */; };
+		A9E6A94227073B8A0066018E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A94127073B8A0066018E /* LogInViewController.swift */; };
+		A9E6A94427073BA70066018E /* ClassRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A94327073BA70066018E /* ClassRoomsTableViewController.swift */; };
+		A9E6A94627073BB20066018E /* ClassRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A94527073BB20066018E /* ClassRoomViewController.swift */; };
+		A9E6A94827073BBE0066018E /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A94727073BBE0066018E /* StudentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A9E6A9162705F8C00066018E /* Lock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E6A9192705F8C00066018E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9E6A91B2705F8C00066018E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A9E6A91D2705F8C00066018E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A9E6A9202705F8C00066018E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A9E6A91D2705F8C00066018E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A9E6A9222705F8C20066018E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9E6A9252705F8C20066018E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9E6A9272705F8C20066018E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9E6A9352705FA880066018E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A9E6A9372705FB150066018E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		A9E6A9392705FB210066018E /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		A9E6A93B27073ADC0066018E /* ClassRoomsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoomsTableView.swift; sourceTree = "<group>"; };
+		A9E6A93D27073B190066018E /* ClassRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoomView.swift; sourceTree = "<group>"; };
+		A9E6A93F27073B510066018E /* StudentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsView.swift; sourceTree = "<group>"; };
+		A9E6A94127073B8A0066018E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		A9E6A94327073BA70066018E /* ClassRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoomsTableViewController.swift; sourceTree = "<group>"; };
+		A9E6A94527073BB20066018E /* ClassRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoomViewController.swift; sourceTree = "<group>"; };
+		A9E6A94727073BBE0066018E /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,80 @@
 		A9E6A9182705F8C00066018E /* Lock */ = {
 			isa = PBXGroup;
 			children = (
-				A9E6A9192705F8C00066018E /* AppDelegate.swift */,
-				A9E6A91B2705F8C00066018E /* SceneDelegate.swift */,
-				A9E6A91D2705F8C00066018E /* ViewController.swift */,
-				A9E6A91F2705F8C00066018E /* Main.storyboard */,
-				A9E6A9222705F8C20066018E /* Assets.xcassets */,
-				A9E6A9242705F8C20066018E /* LaunchScreen.storyboard */,
-				A9E6A9272705F8C20066018E /* Info.plist */,
+				A9E6A92D2705F98F0066018E /* Supporting Files */,
+				A9E6A92E2705F9B60066018E /* Managers */,
+				A9E6A9342705FA400066018E /* Modal */,
+				A9E6A9332705FA3A0066018E /* View */,
+				A9E6A92F2705F9DF0066018E /* Controller */,
+				A9E6A9302705F9EC0066018E /* Storyboards */,
+				A9E6A9312705FA050066018E /* Resources */,
 			);
 			path = Lock;
+			sourceTree = "<group>";
+		};
+		A9E6A92D2705F98F0066018E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9E6A9192705F8C00066018E /* AppDelegate.swift */,
+				A9E6A91B2705F8C00066018E /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9E6A92E2705F9B60066018E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A9E6A9352705FA880066018E /* NetworkManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		A9E6A92F2705F9DF0066018E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9E6A91D2705F8C00066018E /* RegisterViewController.swift */,
+				A9E6A94127073B8A0066018E /* LogInViewController.swift */,
+				A9E6A94327073BA70066018E /* ClassRoomsTableViewController.swift */,
+				A9E6A94527073BB20066018E /* ClassRoomViewController.swift */,
+				A9E6A94727073BBE0066018E /* StudentsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A9E6A9302705F9EC0066018E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A9E6A9242705F8C20066018E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A9E6A9312705FA050066018E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9E6A9272705F8C20066018E /* Info.plist */,
+				A9E6A9222705F8C20066018E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A9E6A9332705FA3A0066018E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9E6A9372705FB150066018E /* RegisterView.swift */,
+				A9E6A9392705FB210066018E /* LogInView.swift */,
+				A9E6A93B27073ADC0066018E /* ClassRoomsTableView.swift */,
+				A9E6A93D27073B190066018E /* ClassRoomView.swift */,
+				A9E6A93F27073B510066018E /* StudentsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9E6A9342705FA400066018E /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +160,7 @@
 				A9E6A9122705F8C00066018E /* Sources */,
 				A9E6A9132705F8C00066018E /* Frameworks */,
 				A9E6A9142705F8C00066018E /* Resources */,
+				A9E6A94927073C920066018E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -127,19 +211,48 @@
 			files = (
 				A9E6A9262705F8C20066018E /* LaunchScreen.storyboard in Resources */,
 				A9E6A9232705F8C20066018E /* Assets.xcassets in Resources */,
-				A9E6A9212705F8C00066018E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9E6A94927073C920066018E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9E6A9122705F8C00066018E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9E6A91E2705F8C00066018E /* ViewController.swift in Sources */,
+				A9E6A93A2705FB210066018E /* LogInView.swift in Sources */,
+				A9E6A9362705FA880066018E /* NetworkManager.swift in Sources */,
+				A9E6A9382705FB150066018E /* RegisterView.swift in Sources */,
+				A9E6A91E2705F8C00066018E /* RegisterViewController.swift in Sources */,
+				A9E6A93E27073B190066018E /* ClassRoomView.swift in Sources */,
+				A9E6A94027073B510066018E /* StudentsView.swift in Sources */,
 				A9E6A91A2705F8C00066018E /* AppDelegate.swift in Sources */,
+				A9E6A93C27073ADC0066018E /* ClassRoomsTableView.swift in Sources */,
+				A9E6A94227073B8A0066018E /* LogInViewController.swift in Sources */,
+				A9E6A94427073BA70066018E /* ClassRoomsTableViewController.swift in Sources */,
+				A9E6A94627073BB20066018E /* ClassRoomViewController.swift in Sources */,
+				A9E6A94827073BBE0066018E /* StudentsViewController.swift in Sources */,
 				A9E6A91C2705F8C00066018E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +260,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A9E6A91F2705F8C00066018E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9E6A9202705F8C00066018E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A9E6A9242705F8C20066018E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
