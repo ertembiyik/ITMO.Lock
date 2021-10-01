@@ -10,15 +10,18 @@ import Foundation
 enum NetworkErrors {
     case noConnection
     case noData
+    case noToken
 }
 
 extension NetworkErrors: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noData:
-            return "Error getting data"
+            return "Отсутсвуют данные с сервера"
         case .noConnection:
-            return "Something went wrong"
+            return "Отсутсвует соединения"
+        case .noToken:
+            return "Отсутствует токен"
         }
     }
 }

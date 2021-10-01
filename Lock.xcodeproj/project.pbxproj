@@ -11,6 +11,8 @@
 		A99D132027075CC50077ADEE /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D131F27075CC50077ADEE /* NetworkErrors.swift */; };
 		A99D132227075DE50077ADEE /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D132127075DE50077ADEE /* AuthModel.swift */; };
 		A99D132427075E670077ADEE /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D132327075E670077ADEE /* Alert.swift */; };
+		A99D13262707797D0077ADEE /* LocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D13252707797D0077ADEE /* LocksModel.swift */; };
+		A99D1328270783050077ADEE /* LockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D1327270783050077ADEE /* LockInfo.swift */; };
 		A9E6A91A2705F8C00066018E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A9192705F8C00066018E /* AppDelegate.swift */; };
 		A9E6A91C2705F8C00066018E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A91B2705F8C00066018E /* SceneDelegate.swift */; };
 		A9E6A91E2705F8C00066018E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A91D2705F8C00066018E /* RegisterViewController.swift */; };
@@ -19,11 +21,11 @@
 		A9E6A9362705FA880066018E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A9352705FA880066018E /* NetworkManager.swift */; };
 		A9E6A9382705FB150066018E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A9372705FB150066018E /* RegisterView.swift */; };
 		A9E6A93A2705FB210066018E /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A9392705FB210066018E /* LogInView.swift */; };
-		A9E6A93C27073ADC0066018E /* ClassRoomsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A93B27073ADC0066018E /* ClassRoomsTableView.swift */; };
+		A9E6A93C27073ADC0066018E /* LocksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A93B27073ADC0066018E /* LocksTableView.swift */; };
 		A9E6A93E27073B190066018E /* ClassRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A93D27073B190066018E /* ClassRoomView.swift */; };
 		A9E6A94027073B510066018E /* StudentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A93F27073B510066018E /* StudentsView.swift */; };
 		A9E6A94227073B8A0066018E /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A94127073B8A0066018E /* LogInViewController.swift */; };
-		A9E6A94427073BA70066018E /* ClassRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A94327073BA70066018E /* ClassRoomsTableViewController.swift */; };
+		A9E6A94427073BA70066018E /* LocksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A94327073BA70066018E /* LocksTableViewController.swift */; };
 		A9E6A94627073BB20066018E /* ClassRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A94527073BB20066018E /* ClassRoomViewController.swift */; };
 		A9E6A94827073BBE0066018E /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A94727073BBE0066018E /* StudentsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +35,8 @@
 		A99D131F27075CC50077ADEE /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		A99D132127075DE50077ADEE /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		A99D132327075E670077ADEE /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = ../../../SpotyFind/SpotyFind/Controller/Alert.swift; sourceTree = "<group>"; };
+		A99D13252707797D0077ADEE /* LocksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocksModel.swift; sourceTree = "<group>"; };
+		A99D1327270783050077ADEE /* LockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockInfo.swift; sourceTree = "<group>"; };
 		A9E6A9162705F8C00066018E /* Lock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E6A9192705F8C00066018E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9E6A91B2705F8C00066018E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,11 +47,11 @@
 		A9E6A9352705FA880066018E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A9E6A9372705FB150066018E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A9E6A9392705FB210066018E /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
-		A9E6A93B27073ADC0066018E /* ClassRoomsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoomsTableView.swift; sourceTree = "<group>"; };
+		A9E6A93B27073ADC0066018E /* LocksTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocksTableView.swift; sourceTree = "<group>"; };
 		A9E6A93D27073B190066018E /* ClassRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoomView.swift; sourceTree = "<group>"; };
 		A9E6A93F27073B510066018E /* StudentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsView.swift; sourceTree = "<group>"; };
 		A9E6A94127073B8A0066018E /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		A9E6A94327073BA70066018E /* ClassRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoomsTableViewController.swift; sourceTree = "<group>"; };
+		A9E6A94327073BA70066018E /* LocksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocksTableViewController.swift; sourceTree = "<group>"; };
 		A9E6A94527073BB20066018E /* ClassRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoomViewController.swift; sourceTree = "<group>"; };
 		A9E6A94727073BBE0066018E /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +119,7 @@
 			children = (
 				A9E6A91D2705F8C00066018E /* RegisterViewController.swift */,
 				A9E6A94127073B8A0066018E /* LogInViewController.swift */,
-				A9E6A94327073BA70066018E /* ClassRoomsTableViewController.swift */,
+				A9E6A94327073BA70066018E /* LocksTableViewController.swift */,
 				A9E6A94527073BB20066018E /* ClassRoomViewController.swift */,
 				A9E6A94727073BBE0066018E /* StudentsViewController.swift */,
 				A99D132327075E670077ADEE /* Alert.swift */,
@@ -143,9 +147,9 @@
 		A9E6A9332705FA3A0066018E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A9E6A9372705FB150066018E /* RegisterView.swift */,
 				A9E6A9392705FB210066018E /* LogInView.swift */,
-				A9E6A93B27073ADC0066018E /* ClassRoomsTableView.swift */,
+				A9E6A9372705FB150066018E /* RegisterView.swift */,
+				A9E6A93B27073ADC0066018E /* LocksTableView.swift */,
 				A9E6A93D27073B190066018E /* ClassRoomView.swift */,
 				A9E6A93F27073B510066018E /* StudentsView.swift */,
 			);
@@ -158,6 +162,8 @@
 				A99D131D27075B9A0077ADEE /* Constants.swift */,
 				A99D131F27075CC50077ADEE /* NetworkErrors.swift */,
 				A99D132127075DE50077ADEE /* AuthModel.swift */,
+				A99D13252707797D0077ADEE /* LocksModel.swift */,
+				A99D1327270783050077ADEE /* LockInfo.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -262,11 +268,13 @@
 				A9E6A93E27073B190066018E /* ClassRoomView.swift in Sources */,
 				A9E6A94027073B510066018E /* StudentsView.swift in Sources */,
 				A9E6A91A2705F8C00066018E /* AppDelegate.swift in Sources */,
-				A9E6A93C27073ADC0066018E /* ClassRoomsTableView.swift in Sources */,
+				A99D1328270783050077ADEE /* LockInfo.swift in Sources */,
+				A9E6A93C27073ADC0066018E /* LocksTableView.swift in Sources */,
 				A9E6A94227073B8A0066018E /* LogInViewController.swift in Sources */,
-				A9E6A94427073BA70066018E /* ClassRoomsTableViewController.swift in Sources */,
+				A9E6A94427073BA70066018E /* LocksTableViewController.swift in Sources */,
 				A9E6A94627073BB20066018E /* ClassRoomViewController.swift in Sources */,
 				A99D131E27075B9A0077ADEE /* Constants.swift in Sources */,
+				A99D13262707797D0077ADEE /* LocksModel.swift in Sources */,
 				A99D132227075DE50077ADEE /* AuthModel.swift in Sources */,
 				A9E6A94827073BBE0066018E /* StudentsViewController.swift in Sources */,
 				A9E6A91C2705F8C00066018E /* SceneDelegate.swift in Sources */,

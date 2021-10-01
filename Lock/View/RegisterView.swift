@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
-class RegisterView: UIView {
-
+final class RegisterView: UIView {
+    // MARK: - UI
+    
 }

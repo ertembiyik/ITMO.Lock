@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-class ClassRoomsTableView: UIView {
+class LocksTableView: UIView {
 
 }

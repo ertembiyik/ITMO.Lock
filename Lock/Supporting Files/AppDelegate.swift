@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Thread.sleep(forTimeInterval: 1)
 
         let window = UIWindow(frame: UIScreen.main.bounds)
-
-        let navVc = UINavigationController(rootViewController: RegisterViewController())
+        
+        let navVc = UINavigationController(rootViewController: ClassRoomViewController())
         window.rootViewController = navVc
         window.makeKeyAndVisible()
         self.window = window

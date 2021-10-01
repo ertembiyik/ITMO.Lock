@@ -9,4 +9,5 @@ import Foundation
 
 struct Constants {
     static let baseAPIUrl = "https://itmolock.herokuapp.com/v1/"
+    static let accessToken = "accessToken"
 }

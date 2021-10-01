@@ -10,6 +10,8 @@ import Foundation
 protocol NetworkManagerDelegate: AnyObject {
     func errorOccurred(_ error: Error)
     func deliverToken(_ token: String)
+    func deliverLocks(locks: [LockModel])
+    func deliverLockInfo(lockInfo: LockInfo)
 }
 
 final class NetworkManager {
@@ -17,6 +19,7 @@ final class NetworkManager {
     // MARK: - Properties
     weak var delegate: NetworkManagerDelegate?
 
+    // MARK: - Functions
     func register(email: String, password: String, name: String, surname: String) {
         
         let url = URL(string: Constants.baseAPIUrl + "auth/registration")!
@@ -48,6 +51,7 @@ final class NetworkManager {
             
             do {
                 let result = try JSONDecoder().decode(AuthModel.self, from: data)
+                self.cacheToken(token: result.token)
                 self.delegate?.deliverToken(result.token)
             } catch {
                 self.delegate?.errorOccurred(error)
@@ -85,11 +89,99 @@ final class NetworkManager {
             
             do {
                 let result = try JSONDecoder().decode(AuthModel.self, from: data)
+                self.cacheToken(token: result.token)
                 self.delegate?.deliverToken(result.token)
             } catch {
                 self.delegate?.errorOccurred(error)
             }
         }
         task.resume()
+    }
+    
+    func fetchLocks() {
+        
+        let url = URL(string: Constants.baseAPIUrl + "locks")!
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        guard let token = UserDefaults.standard.string(forKey: Constants.accessToken) else {
+            delegate?.errorOccurred(NetworkErrors.noToken)
+            return
+        }
+        
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+        
+        let session = URLSession(configuration: .default)
+        
+        let task = session.dataTask(with: request) { [weak self] data, _, error in
+            guard let self = self, let data = data, error == nil else {
+                self?.delegate?.errorOccurred(NetworkErrors.noConnection)
+                return
+            }
+            
+            do {
+                let result = try JSONDecoder().decode(LocksModel.self, from: data)
+                self.delegate?.deliverLocks(locks: result.locks)
+            } catch {
+                self.delegate?.errorOccurred(error)
+            }
+        }
+        task.resume()
+    }
+    
+    func getLockInfo(lockId: String) {
+        let url = URL(string: Constants.baseAPIUrl + "locks/\(lockId)")!
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        guard let token = UserDefaults.standard.string(forKey: Constants.accessToken) else {
+            delegate?.errorOccurred(NetworkErrors.noToken)
+            return
+        }
+        
+        request.setValue(token, forHTTPHeaderField: "Authorization")
+        
+        let session = URLSession(configuration: .default)
+        
+        let task = session.dataTask(with: request) { [weak self] data, _, error in
+            guard let self = self, let data = data, error == nil else {
+                self?.delegate?.errorOccurred(NetworkErrors.noConnection)
+                return
+            }
+            
+            do {
+                let result = try JSONDecoder().decode(LockInfo.self, from: data)
+                self.delegate?.deliverLockInfo(lockInfo: result)
+            } catch {
+                self.delegate?.errorOccurred(error)
+            }
+        }
+        task.resume()
+    }
+    
+    private func cacheToken(token: String) {
+        UserDefaults.standard.set(token, forKey: Constants.accessToken)
+    }
+}
+
+extension NetworkManagerDelegate {
+    func deliverToken(_ token: String) {
+        
+    }
+    
+    func deliverLocks(locks: [LockModel]) {
+        
+    }
+    
+    func deliverLockInfo(lockInfo: LockInfo) {
+        
     }
 }
