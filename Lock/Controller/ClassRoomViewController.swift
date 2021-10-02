@@ -29,6 +29,4 @@ extension ClassRoomViewController: NetworkManagerDelegate {
     func deliverLockInfo(lockInfo: LockInfo) {
         print(lockInfo)
     }
-    
-    
 }

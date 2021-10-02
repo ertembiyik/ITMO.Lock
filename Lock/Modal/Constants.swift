@@ -5,9 +5,10 @@
 //  Created by Ertem Biyik on 01.10.2021.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
     static let baseAPIUrl = "https://itmolock.herokuapp.com/v1/"
     static let accessToken = "accessToken"
+    static let themeBackGroundColor = UIColor(red: 0.04, green: 0.05, blue: 0.10, alpha: 1.0)
 }

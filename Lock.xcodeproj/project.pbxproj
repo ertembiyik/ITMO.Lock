@@ -13,6 +13,9 @@
 		A99D132427075E670077ADEE /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D132327075E670077ADEE /* Alert.swift */; };
 		A99D13262707797D0077ADEE /* LocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D13252707797D0077ADEE /* LocksModel.swift */; };
 		A99D1328270783050077ADEE /* LockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D1327270783050077ADEE /* LockInfo.swift */; };
+		A99D132B270874D30077ADEE /* ITMOTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D132A270874D30077ADEE /* ITMOTextField.swift */; };
+		A99D132D27087F830077ADEE /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A99D132C27087F830077ADEE /* Roboto-Regular.ttf */; };
+		A99D132F27088C480077ADEE /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A99D132E27088C480077ADEE /* Roboto-Medium.ttf */; };
 		A9E6A91A2705F8C00066018E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A9192705F8C00066018E /* AppDelegate.swift */; };
 		A9E6A91C2705F8C00066018E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A91B2705F8C00066018E /* SceneDelegate.swift */; };
 		A9E6A91E2705F8C00066018E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6A91D2705F8C00066018E /* RegisterViewController.swift */; };
@@ -37,6 +40,9 @@
 		A99D132327075E670077ADEE /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = ../../../SpotyFind/SpotyFind/Controller/Alert.swift; sourceTree = "<group>"; };
 		A99D13252707797D0077ADEE /* LocksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocksModel.swift; sourceTree = "<group>"; };
 		A99D1327270783050077ADEE /* LockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockInfo.swift; sourceTree = "<group>"; };
+		A99D132A270874D30077ADEE /* ITMOTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITMOTextField.swift; sourceTree = "<group>"; };
+		A99D132C27087F830077ADEE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../../../../Downloads/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		A99D132E27088C480077ADEE /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../../../../../Downloads/Roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		A9E6A9162705F8C00066018E /* Lock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E6A9192705F8C00066018E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9E6A91B2705F8C00066018E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A99D13292707A2400077ADEE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A9E6A9352705FA880066018E /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		A9E6A90D2705F8BF0066018E = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				A9E6A92D2705F98F0066018E /* Supporting Files */,
-				A9E6A92E2705F9B60066018E /* Managers */,
+				A99D13292707A2400077ADEE /* Managers */,
 				A9E6A9342705FA400066018E /* Modal */,
 				A9E6A9332705FA3A0066018E /* View */,
 				A9E6A92F2705F9DF0066018E /* Controller */,
@@ -104,14 +118,6 @@
 				A9E6A91B2705F8C00066018E /* SceneDelegate.swift */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A9E6A92E2705F9B60066018E /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				A9E6A9352705FA880066018E /* NetworkManager.swift */,
-			);
-			name = Managers;
 			sourceTree = "<group>";
 		};
 		A9E6A92F2705F9DF0066018E /* Controller */ = {
@@ -139,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				A9E6A9272705F8C20066018E /* Info.plist */,
+				A99D132C27087F830077ADEE /* Roboto-Regular.ttf */,
+				A99D132E27088C480077ADEE /* Roboto-Medium.ttf */,
 				A9E6A9222705F8C20066018E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -147,8 +155,9 @@
 		A9E6A9332705FA3A0066018E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A9E6A9392705FB210066018E /* LogInView.swift */,
+				A99D132A270874D30077ADEE /* ITMOTextField.swift */,
 				A9E6A9372705FB150066018E /* RegisterView.swift */,
+				A9E6A9392705FB210066018E /* LogInView.swift */,
 				A9E6A93B27073ADC0066018E /* LocksTableView.swift */,
 				A9E6A93D27073B190066018E /* ClassRoomView.swift */,
 				A9E6A93F27073B510066018E /* StudentsView.swift */,
@@ -227,6 +236,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A99D132F27088C480077ADEE /* Roboto-Medium.ttf in Resources */,
+				A99D132D27087F830077ADEE /* Roboto-Regular.ttf in Resources */,
 				A9E6A9262705F8C20066018E /* LaunchScreen.storyboard in Resources */,
 				A9E6A9232705F8C20066018E /* Assets.xcassets in Resources */,
 			);
@@ -271,6 +282,7 @@
 				A99D1328270783050077ADEE /* LockInfo.swift in Sources */,
 				A9E6A93C27073ADC0066018E /* LocksTableView.swift in Sources */,
 				A9E6A94227073B8A0066018E /* LogInViewController.swift in Sources */,
+				A99D132B270874D30077ADEE /* ITMOTextField.swift in Sources */,
 				A9E6A94427073BA70066018E /* LocksTableViewController.swift in Sources */,
 				A9E6A94627073BB20066018E /* ClassRoomViewController.swift in Sources */,
 				A99D131E27075B9A0077ADEE /* Constants.swift in Sources */,
