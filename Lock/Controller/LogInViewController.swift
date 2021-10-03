@@ -22,6 +22,8 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         networkManager.delegate = self
+        logInView.emailTextField.textField.delegate = self
+        logInView.passwordTextField.textField.delegate = self
         setUpView()
     }
     
@@ -33,14 +35,29 @@ class LogInViewController: UIViewController {
     // MARK: - Functions
     func setUpView() {
         logInView.logInButton.addTarget(self, action: #selector(logInButtonDidTapped), for: .touchUpInside)
-        logInView.registerButton.addTarget(self, action: #selector(registerButtonDidPressed), for: .touchUpInside)
+        logInView.registerButton.addTarget(self, action: #selector(registerButtonDidTapped), for: .touchUpInside)
     }
     
     @objc func logInButtonDidTapped() {
+        logInView.emailTextField.textField.resignFirstResponder()
+        logInView.passwordTextField.textField.resignFirstResponder()
+
+        guard let email = logInView.emailTextField.textField.text,
+              let password = logInView.passwordTextField.textField.text,
+              !email.isEmpty,
+              !password.isEmpty
+              
+        else {
+            showAlert(with: "Ошибка", message: "Пожалуйста введите всю информацию", style: .alert)
+            return
+        }
+
+        // TODO: - Spinner
         
+        networkManager.logIn(email: email, password: password)
     }
     
-    @objc func registerButtonDidPressed() {
+    @objc func registerButtonDidTapped() {
         let registerVc = RegisterViewController()
         registerVc.modalTransitionStyle = .flipHorizontal
         registerVc.modalPresentationStyle = .fullScreen
@@ -55,7 +72,25 @@ extension LogInViewController: NetworkManagerDelegate {
         }
     }
     
-    func deliverToken(_ token: String) {
-        print(token)
+    func signIn() {
+        DispatchQueue.main.async {
+            let vc = LocksTableViewController()
+            let navVc = UINavigationController(rootViewController: vc)
+            navVc.modalPresentationStyle = .fullScreen
+            self.present(navVc, animated: true)
+        }
+    }
+}
+
+extension LogInViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        if textField == logInView.emailTextField.textField {
+            logInView.passwordTextField.textField.becomeFirstResponder()
+        } else if textField == logInView.passwordTextField.textField {
+            logInButtonDidTapped()
+        }
+        return true
     }
 }

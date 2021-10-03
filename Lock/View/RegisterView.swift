@@ -77,16 +77,21 @@ final class RegisterView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backgroundColor = Constants.themeBackGroundColor
+        
         addSubview(containerView)
         addSubview(lockImageView)
+        
         textFieldsStackView.addArrangedSubview(emailTextField)
         textFieldsStackView.addArrangedSubview(nameTextField)
         textFieldsStackView.addArrangedSubview(surnameTextField)
         textFieldsStackView.addArrangedSubview(passwordTextField)
+        
         buttonsStackView.addArrangedSubview(registerButton)
         buttonsStackView.addArrangedSubview(logInButton)
+        
         containerView.addSubview(textFieldsStackView)
         containerView.addSubview(buttonsStackView)
+        
         setConstraints()
     }
     
@@ -144,5 +149,4 @@ final class RegisterView: UIView {
         
         NSLayoutConstraint.activate(constraints)
     }
-    
 }

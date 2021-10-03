@@ -23,6 +23,9 @@ class LocksTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Аудитории"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.barStyle = .black
         networkManager.delegate = self
         networkManager.fetchLocks()
         locksTableView.tableView.delegate = self

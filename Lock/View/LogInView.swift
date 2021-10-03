@@ -73,14 +73,19 @@ final class LogInView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backgroundColor = Constants.themeBackGroundColor
+        
         addSubview(containerView)
         addSubview(lockImageView)
+        
         textFieldsStackView.addArrangedSubview(emailTextField)
         textFieldsStackView.addArrangedSubview(passwordTextField)
+        
         buttonsStackView.addArrangedSubview(logInButton)
         buttonsStackView.addArrangedSubview(registerButton)
+        
         containerView.addSubview(textFieldsStackView)
         containerView.addSubview(buttonsStackView)
+        
         setConstraints()
     }
     

@@ -9,7 +9,7 @@ import Foundation
 
 protocol NetworkManagerDelegate: AnyObject {
     func errorOccurred(_ error: Error)
-    func deliverToken(_ token: String)
+    func signIn()
     func deliverLocks(locks: [LockModel])
     func deliverLockInfo(lockInfo: LockInfo)
 }
@@ -52,7 +52,7 @@ final class NetworkManager {
             do {
                 let result = try JSONDecoder().decode(AuthModel.self, from: data)
                 self.cacheToken(token: result.token)
-                self.delegate?.deliverToken(result.token)
+                self.delegate?.signIn()
             } catch {
                 self.delegate?.errorOccurred(NetworkErrors.noData)
             }
@@ -90,7 +90,7 @@ final class NetworkManager {
             do {
                 let result = try JSONDecoder().decode(AuthModel.self, from: data)
                 self.cacheToken(token: result.token)
-                self.delegate?.deliverToken(result.token)
+                self.delegate?.signIn()
             } catch {
                 self.delegate?.errorOccurred(NetworkErrors.noData)
             }
@@ -174,7 +174,7 @@ final class NetworkManager {
 
 // MARK: - Extensions
 extension NetworkManagerDelegate {
-    func deliverToken(_ token: String) {
+    func signIn() {
         
     }
     
