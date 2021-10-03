@@ -20,7 +20,7 @@ final class RegisterView: UIView {
     
     lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.08, green: 0.09, blue: 0.15, alpha: 1.0)
+        view.backgroundColor = Constants.accentColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

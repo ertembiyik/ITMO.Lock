@@ -16,8 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let registerVc = RegisterViewController()
-        window.rootViewController = registerVc
+        if UserDefaults.standard.string(forKey: Constants.accessToken) != nil {
+            let vc = LocksTableViewController()
+            let navVc = UINavigationController(rootViewController: vc)
+            window.rootViewController = navVc
+        } else {
+            let vc = LogInViewController()
+            window.rootViewController = vc
+        }
+        
         window.makeKeyAndVisible()
         self.window = window
     }

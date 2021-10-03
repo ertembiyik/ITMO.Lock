@@ -16,12 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        Thread.sleep(forTimeInterval: 1)
-
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let registerVc = RegisterViewController()
-        window.rootViewController = registerVc
+        if UserDefaults.standard.string(forKey: Constants.accessToken) != nil {
+            let vc = LocksTableViewController()
+            let navVc = UINavigationController(rootViewController: vc)
+            window.rootViewController = navVc
+        } else {
+            let vc = LogInViewController()
+            window.rootViewController = vc
+        }
+        
         window.makeKeyAndVisible()
         self.window = window
 

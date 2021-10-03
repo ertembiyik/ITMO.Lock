@@ -54,7 +54,7 @@ final class NetworkManager {
                 self.cacheToken(token: result.token)
                 self.delegate?.deliverToken(result.token)
             } catch {
-                self.delegate?.errorOccurred(error)
+                self.delegate?.errorOccurred(NetworkErrors.noData)
             }
         }
         task.resume()
@@ -92,7 +92,7 @@ final class NetworkManager {
                 self.cacheToken(token: result.token)
                 self.delegate?.deliverToken(result.token)
             } catch {
-                self.delegate?.errorOccurred(error)
+                self.delegate?.errorOccurred(NetworkErrors.noData)
             }
         }
         task.resume()
@@ -127,7 +127,7 @@ final class NetworkManager {
                 let result = try JSONDecoder().decode(LocksModel.self, from: data)
                 self.delegate?.deliverLocks(locks: result.locks)
             } catch {
-                self.delegate?.errorOccurred(error)
+                self.delegate?.errorOccurred(NetworkErrors.noData)
             }
         }
         task.resume()
@@ -161,7 +161,7 @@ final class NetworkManager {
                 let result = try JSONDecoder().decode(LockInfo.self, from: data)
                 self.delegate?.deliverLockInfo(lockInfo: result)
             } catch {
-                self.delegate?.errorOccurred(error)
+                self.delegate?.errorOccurred(NetworkErrors.noData)
             }
         }
         task.resume()
@@ -172,6 +172,7 @@ final class NetworkManager {
     }
 }
 
+// MARK: - Extensions
 extension NetworkManagerDelegate {
     func deliverToken(_ token: String) {
         

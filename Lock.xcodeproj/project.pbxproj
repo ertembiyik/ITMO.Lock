@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A989CEB72709156500D990B0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A989CEB62709156500D990B0 /* Extensions.swift */; };
 		A99D131E27075B9A0077ADEE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D131D27075B9A0077ADEE /* Constants.swift */; };
 		A99D132027075CC50077ADEE /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D131F27075CC50077ADEE /* NetworkErrors.swift */; };
 		A99D132227075DE50077ADEE /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D132127075DE50077ADEE /* AuthModel.swift */; };
-		A99D132427075E670077ADEE /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D132327075E670077ADEE /* Alert.swift */; };
 		A99D13262707797D0077ADEE /* LocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D13252707797D0077ADEE /* LocksModel.swift */; };
 		A99D1328270783050077ADEE /* LockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D1327270783050077ADEE /* LockInfo.swift */; };
 		A99D132B270874D30077ADEE /* ITMOTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99D132A270874D30077ADEE /* ITMOTextField.swift */; };
@@ -34,10 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A989CEB62709156500D990B0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A99D131D27075B9A0077ADEE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A99D131F27075CC50077ADEE /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		A99D132127075DE50077ADEE /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
-		A99D132327075E670077ADEE /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = ../../../SpotyFind/SpotyFind/Controller/Alert.swift; sourceTree = "<group>"; };
 		A99D13252707797D0077ADEE /* LocksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocksModel.swift; sourceTree = "<group>"; };
 		A99D1327270783050077ADEE /* LockInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockInfo.swift; sourceTree = "<group>"; };
 		A99D132A270874D30077ADEE /* ITMOTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITMOTextField.swift; sourceTree = "<group>"; };
@@ -116,6 +116,7 @@
 			children = (
 				A9E6A9192705F8C00066018E /* AppDelegate.swift */,
 				A9E6A91B2705F8C00066018E /* SceneDelegate.swift */,
+				A989CEB62709156500D990B0 /* Extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -128,7 +129,6 @@
 				A9E6A94327073BA70066018E /* LocksTableViewController.swift */,
 				A9E6A94527073BB20066018E /* ClassRoomViewController.swift */,
 				A9E6A94727073BBE0066018E /* StudentsViewController.swift */,
-				A99D132327075E670077ADEE /* Alert.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -273,7 +273,6 @@
 				A9E6A93A2705FB210066018E /* LogInView.swift in Sources */,
 				A9E6A9362705FA880066018E /* NetworkManager.swift in Sources */,
 				A99D132027075CC50077ADEE /* NetworkErrors.swift in Sources */,
-				A99D132427075E670077ADEE /* Alert.swift in Sources */,
 				A9E6A9382705FB150066018E /* RegisterView.swift in Sources */,
 				A9E6A91E2705F8C00066018E /* RegisterViewController.swift in Sources */,
 				A9E6A93E27073B190066018E /* ClassRoomView.swift in Sources */,
@@ -283,6 +282,7 @@
 				A9E6A93C27073ADC0066018E /* LocksTableView.swift in Sources */,
 				A9E6A94227073B8A0066018E /* LogInViewController.swift in Sources */,
 				A99D132B270874D30077ADEE /* ITMOTextField.swift in Sources */,
+				A989CEB72709156500D990B0 /* Extensions.swift in Sources */,
 				A9E6A94427073BA70066018E /* LocksTableViewController.swift in Sources */,
 				A9E6A94627073BB20066018E /* ClassRoomViewController.swift in Sources */,
 				A99D131E27075B9A0077ADEE /* Constants.swift in Sources */,
