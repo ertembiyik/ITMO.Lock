@@ -60,7 +60,7 @@ class RegisterViewController: UIViewController {
             return
         }
 
-        // TODO: - Spinner
+        registerView.spinner.show(in: self.view)
         
         networkManager.register(email: email, password: password, name: name, surname: surname)
     }
@@ -77,12 +77,14 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: NetworkManagerDelegate {
     func errorOccurred(_ error: Error) {
         DispatchQueue.main.async {
+            self.registerView.spinner.dismiss()
             self.showAlert(with: "Ошибка", message: error.localizedDescription, style: .alert)
         }
     }
     
     func signIn() {
         DispatchQueue.main.async {
+            self.registerView.spinner.dismiss()
             let vc = LocksTableViewController()
             let navVc = UINavigationController(rootViewController: vc)
             navVc.modalPresentationStyle = .fullScreen

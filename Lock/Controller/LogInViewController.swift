@@ -52,7 +52,7 @@ class LogInViewController: UIViewController {
             return
         }
 
-        // TODO: - Spinner
+        logInView.spinner.show(in: self.view)
         
         networkManager.logIn(email: email, password: password)
     }
@@ -68,12 +68,14 @@ class LogInViewController: UIViewController {
 extension LogInViewController: NetworkManagerDelegate {
     func errorOccurred(_ error: Error) {
         DispatchQueue.main.async {
+            self.logInView.spinner.dismiss()
             self.showAlert(with: "Ошибка", message: error.localizedDescription, style: .alert)
         }
     }
     
     func signIn() {
         DispatchQueue.main.async {
+            self.logInView.spinner.dismiss()
             let vc = LocksTableViewController()
             let navVc = UINavigationController(rootViewController: vc)
             navVc.modalPresentationStyle = .fullScreen

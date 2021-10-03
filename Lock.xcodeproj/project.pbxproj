@@ -84,7 +84,6 @@
 				FBFFFB1F1A299C09B007D345 /* Pods-Lock.debug.xcconfig */,
 				37CF4876E853BC5F13A62623 /* Pods-Lock.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

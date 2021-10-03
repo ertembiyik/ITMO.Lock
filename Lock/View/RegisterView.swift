@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 final class RegisterView: UIView {
     
     // MARK: - UI
+    lazy var spinner = JGProgressHUD(style: .dark)
+    
     lazy var lockImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "lockLogo")
