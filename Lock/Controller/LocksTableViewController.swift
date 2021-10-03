@@ -26,6 +26,11 @@ class LocksTableViewController: UIViewController {
         title = "Аудитории"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barStyle = .black
+        
+        locksTableView.logOutButton.addTarget(self, action: #selector(logOut), for: .touchUpInside)
+        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem()
+        leftBarButtonItem.customView = locksTableView.logOutButton
+        navigationItem.leftBarButtonItem = leftBarButtonItem
         networkManager.delegate = self
         networkManager.fetchLocks()
         locksTableView.tableView.delegate = self
@@ -35,6 +40,22 @@ class LocksTableViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         locksTableView.tableView.frame = view.bounds
+    }
+    
+    @objc func logOut() {
+        let alert = UIAlertController(title: "Вы уверены, что хотите выйти?", message: "", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Выйти", style: .destructive, handler: { _ in
+            UserDefaults.standard.set(nil, forKey: Constants.accessToken)
+            let vc = RegisterViewController()
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .flipHorizontal
+            self.present(vc, animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
+        
     }
 }
 

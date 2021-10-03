@@ -17,6 +17,13 @@ class LocksTableView: UIView {
         return tableView
     }()
     
+    lazy var logOutButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "logOutButton"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -24,11 +31,24 @@ class LocksTableView: UIView {
         tableView.backgroundColor = Constants.themeBackGroundColor
         tableView.separatorStyle = .none
         addSubview(tableView)
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setConstraints() {
+        
+        var constraints = [NSLayoutConstraint]()
+        
+    constraints.append(logOutButton.heightAnchor.constraint(equalToConstant: 20))
+    constraints.append(logOutButton.widthAnchor.constraint(equalToConstant: 20))
+        
+        NSLayoutConstraint.activate(constraints)
+        
+    }
+    
 }
 
 class LocksTableViewCell: UITableViewCell {
