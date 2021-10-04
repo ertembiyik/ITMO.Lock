@@ -12,8 +12,8 @@ struct LocksModel: Codable {
 }
 
 struct LockModel: Codable {
-    let id: Int
     let number: String
     let preview: String
     let about: String
+    let id: Int
 }

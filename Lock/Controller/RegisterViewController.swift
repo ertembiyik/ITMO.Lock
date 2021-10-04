@@ -35,12 +35,12 @@ class RegisterViewController: UIViewController {
     }
     
     // MARK: - Functions
-    func setUpView() {
+    private func setUpView() {
         registerView.registerButton.addTarget(self, action: #selector(registerButtonDidTapped), for: .touchUpInside)
         registerView.logInButton.addTarget(self, action: #selector(logInButtonDidTapped), for: .touchUpInside)
     }
     
-    @objc func registerButtonDidTapped() {
+    @objc private func registerButtonDidTapped() {
         registerView.emailTextField.textField.resignFirstResponder()
         registerView.nameTextField.textField.resignFirstResponder()
         registerView.surnameTextField.textField.resignFirstResponder()
@@ -65,7 +65,7 @@ class RegisterViewController: UIViewController {
         networkManager.register(email: email, password: password, name: name, surname: surname)
     }
     
-    @objc func logInButtonDidTapped() {
+    @objc private func logInButtonDidTapped() {
         let logInVc = LogInViewController()
         logInVc.modalTransitionStyle = .flipHorizontal
         logInVc.modalPresentationStyle = .fullScreen
@@ -94,6 +94,7 @@ extension RegisterViewController: NetworkManagerDelegate {
         
 }
 
+// MARK: - Extensions
 extension RegisterViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

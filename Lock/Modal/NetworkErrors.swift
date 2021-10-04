@@ -17,7 +17,7 @@ extension NetworkErrors: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noData:
-            return "Отсутствуют данные с сервера"
+            return "Проверьте правильность данных"
         case .noConnection:
             return "Отсутствует соединение"
         case .noToken:

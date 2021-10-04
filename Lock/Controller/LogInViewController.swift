@@ -33,12 +33,12 @@ class LogInViewController: UIViewController {
     }
     
     // MARK: - Functions
-    func setUpView() {
+    private func setUpView() {
         logInView.logInButton.addTarget(self, action: #selector(logInButtonDidTapped), for: .touchUpInside)
         logInView.registerButton.addTarget(self, action: #selector(registerButtonDidTapped), for: .touchUpInside)
     }
     
-    @objc func logInButtonDidTapped() {
+    @objc private func logInButtonDidTapped() {
         logInView.emailTextField.textField.resignFirstResponder()
         logInView.passwordTextField.textField.resignFirstResponder()
 
@@ -57,7 +57,7 @@ class LogInViewController: UIViewController {
         networkManager.logIn(email: email, password: password)
     }
     
-    @objc func registerButtonDidTapped() {
+    @objc private func registerButtonDidTapped() {
         let registerVc = RegisterViewController()
         registerVc.modalTransitionStyle = .flipHorizontal
         registerVc.modalPresentationStyle = .fullScreen
@@ -65,6 +65,7 @@ class LogInViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension LogInViewController: NetworkManagerDelegate {
     func errorOccurred(_ error: Error) {
         DispatchQueue.main.async {

@@ -97,7 +97,7 @@ final class LogInView: UIView {
     }
     
     // MARK: - Constraints
-    func setConstraints() {
+    private func setConstraints() {
         var constraints = [NSLayoutConstraint]()
         
         // Lock Image View

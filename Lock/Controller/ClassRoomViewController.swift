@@ -36,15 +36,12 @@ class ClassRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Аудитория \(lock.number)"
-        let backButton = UIBarButtonItem()
-        backButton.title = ""
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        setNavVar()
         classRoomView.classImageView.isHidden = true
         classRoomView.descriptionLabel.isHidden = true
         classRoomView.openTheDoorButton.isHidden = true
         networkManager.delegate = self
-        networkManager.getLockInfo(lockId: "1")
+        networkManager.getLockInfo(lockId: lock.id)
         classRoomView.spinner.show(in: self.view)
     }
     
@@ -52,8 +49,30 @@ class ClassRoomViewController: UIViewController {
         super.viewDidLayoutSubviews()
         classRoomView.classImageView.layer.cornerRadius = classRoomView.classImageView.frame.size.width / 2
     }
+    
+    // MARK: - Functions
+    private func setNavVar() {
+        title = "Аудитория \(lock.number)"
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
+        if UserDefaults.standard.bool(forKey: Constants.isAdmin) {
+            classRoomView.studentsButton.addTarget(self, action: #selector(studentsButtonDidTapped), for: .touchUpInside)
+            let rightBarButtonItem: UIBarButtonItem = UIBarButtonItem()
+            rightBarButtonItem.customView = classRoomView.studentsButton
+            navigationItem.rightBarButtonItem = rightBarButtonItem
+        }
+    }
+    
+    @objc private func studentsButtonDidTapped() {
+        let vc = StudentsViewController(lockId: lock.id)
+        vc.title = title
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
+// MARK: - Extensions
 extension ClassRoomViewController: NetworkManagerDelegate {
     func errorOccurred(_ error: Error) {
         DispatchQueue.main.async {

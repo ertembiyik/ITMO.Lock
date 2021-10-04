@@ -38,7 +38,7 @@ class LocksTableView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setConstraints() {
+    private func setConstraints() {
         
         var constraints = [NSLayoutConstraint]()
         
@@ -84,9 +84,12 @@ class LocksTableViewCell: UITableViewCell {
     // MARK: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
+        backgroundColor = Constants.themeBackGroundColor
         containerView.addSubview(cellLabel)
         containerView.addSubview(indicator)
         contentView.addSubview(containerView)
+        
         setConstraints()
     }
     
@@ -95,7 +98,7 @@ class LocksTableViewCell: UITableViewCell {
     }
     
     // MARK: - Constraints
-    func setConstraints() {
+    private func setConstraints() {
         
         var constraints = [NSLayoutConstraint]()
         

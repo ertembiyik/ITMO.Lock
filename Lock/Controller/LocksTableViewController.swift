@@ -23,18 +23,11 @@ class LocksTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Аудитории"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.barStyle = .black
-        
-        locksTableView.logOutButton.addTarget(self, action: #selector(logOut), for: .touchUpInside)
-        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem()
-        leftBarButtonItem.customView = locksTableView.logOutButton
-        navigationItem.leftBarButtonItem = leftBarButtonItem
+        setUpView()
         networkManager.delegate = self
-        networkManager.fetchLocks()
         locksTableView.tableView.delegate = self
         locksTableView.tableView.dataSource = self
+        networkManager.fetchLocks()
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,11 +35,25 @@ class LocksTableViewController: UIViewController {
         locksTableView.tableView.frame = view.bounds
     }
     
-    @objc func logOut() {
+    // MARK: - Functions
+    private func setUpView() {
+        title = "Аудитории"
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.barStyle = .black
+        
+        locksTableView.logOutButton.addTarget(self, action: #selector(logOut), for: .touchUpInside)
+        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem()
+        leftBarButtonItem.customView = locksTableView.logOutButton
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+    }
+    
+    @objc private func logOut() {
         let alert = UIAlertController(title: "Вы уверены, что хотите выйти?", message: "", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Выйти", style: .destructive, handler: { _ in
             UserDefaults.standard.set(nil, forKey: Constants.accessToken)
+            UserDefaults.standard.set(nil, forKey: Constants.isAdmin)
             let vc = RegisterViewController()
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .flipHorizontal
@@ -59,6 +66,7 @@ class LocksTableViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension LocksTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,8 +75,6 @@ extension LocksTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LocksTableViewCell.identifier, for: indexPath) as! LocksTableViewCell
-        cell.selectionStyle = .none
-        cell.backgroundColor = Constants.themeBackGroundColor
         cell.cellLabel.text = "\(locks[indexPath.row].number)"
         return cell
     }

@@ -31,8 +31,10 @@ final class ITMOTextField: UIView {
     // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        
         addSubview(textField)
         addSubview(separator)
+        
         setConstraints()
     }
     
@@ -46,7 +48,7 @@ final class ITMOTextField: UIView {
     }
     
     // MARK: - Constraints
-    func setConstraints() {
+    private func setConstraints() {
         
         var constraints = [NSLayoutConstraint]()
         

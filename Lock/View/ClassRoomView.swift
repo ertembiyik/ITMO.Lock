@@ -12,6 +12,13 @@ class ClassRoomView: UIView {
     // MARK: - UI
     lazy var spinner = JGProgressHUD(style: .dark)
     
+    lazy var studentsButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "studentsButton"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     lazy var classImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -59,7 +66,7 @@ class ClassRoomView: UIView {
     }
     
     // MARK: - Constraints
-    func setConstraints() {
+    private func setConstraints() {
         
         var constraints = [NSLayoutConstraint]()
         
@@ -74,11 +81,15 @@ class ClassRoomView: UIView {
         constraints.append(descriptionLabel.topAnchor.constraint(equalTo: classImageView.bottomAnchor, constant: 50))
         constraints.append(descriptionLabel.heightAnchor.constraint(equalToConstant: 50))
         
-        //  Button
+        //  Open The Button
         constraints.append(openTheDoorButton.heightAnchor.constraint(equalToConstant: 50))
         constraints.append(openTheDoorButton.widthAnchor.constraint(equalToConstant: 250))
         constraints.append(openTheDoorButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor))
         constraints.append(openTheDoorButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -80))
+            
+        // Students Button
+        constraints.append(studentsButton.heightAnchor.constraint(equalToConstant: 20))
+        constraints.append(studentsButton.widthAnchor.constraint(equalToConstant: 25))
         
         NSLayoutConstraint.activate(constraints)
         
