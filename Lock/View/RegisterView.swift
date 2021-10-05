@@ -81,6 +81,16 @@ final class RegisterView: UIView {
         super.init(frame: .zero)
         backgroundColor = Constants.themeBackGroundColor
         
+        emailTextField.textField.autocorrectionType = .no
+        emailTextField.textField.autocapitalizationType = .none
+        
+        nameTextField.textField.autocorrectionType = .no
+        
+        surnameTextField.textField.autocorrectionType = .no
+        
+        passwordTextField.textField.autocorrectionType = .no
+        passwordTextField.textField.autocapitalizationType = .none
+        
         addSubview(containerView)
         addSubview(lockImageView)
         

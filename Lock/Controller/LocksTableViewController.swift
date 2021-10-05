@@ -27,6 +27,7 @@ class LocksTableViewController: UIViewController {
         networkManager.delegate = self
         locksTableView.tableView.delegate = self
         locksTableView.tableView.dataSource = self
+        locksTableView.spinner.show(in: self.view, animated: true, afterDelay: 2)
         networkManager.fetchLocks()
     }
     
@@ -99,6 +100,7 @@ extension LocksTableViewController: NetworkManagerDelegate {
     
     func deliverLocks(locks: [LockModel]) {
         DispatchQueue.main.async {
+            self.locksTableView.spinner.dismiss()
             self.locks = locks
             self.locksTableView.tableView.reloadData()
         }

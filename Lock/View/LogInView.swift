@@ -80,6 +80,12 @@ final class LogInView: UIView {
         addSubview(containerView)
         addSubview(lockImageView)
         
+        emailTextField.textField.autocorrectionType = .no
+        emailTextField.textField.autocapitalizationType = .none
+        
+        passwordTextField.textField.autocorrectionType = .no
+        passwordTextField.textField.autocapitalizationType = .none
+        
         textFieldsStackView.addArrangedSubview(emailTextField)
         textFieldsStackView.addArrangedSubview(passwordTextField)
         

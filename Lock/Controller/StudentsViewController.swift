@@ -37,7 +37,7 @@ class StudentsViewController: UIViewController {
         networkManager.delegate = self
         studentsView.tableView.delegate = self
         studentsView.tableView.dataSource = self
-        studentsView.spinner.show(in: self.view)
+        studentsView.spinner.show(in: self.view, animated: true, afterDelay: 2)
         networkManager.getAllUsers()
     }
     

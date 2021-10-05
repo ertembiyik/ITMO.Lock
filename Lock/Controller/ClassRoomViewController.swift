@@ -37,12 +37,9 @@ class ClassRoomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavVar()
-        classRoomView.classImageView.isHidden = true
-        classRoomView.descriptionLabel.isHidden = true
-        classRoomView.openTheDoorButton.isHidden = true
         networkManager.delegate = self
+        classRoomView.spinner.show(in: self.view, animated: true, afterDelay: 2)
         networkManager.getLockInfo(lockId: lock.id)
-        classRoomView.spinner.show(in: self.view)
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,13 +80,8 @@ extension ClassRoomViewController: NetworkManagerDelegate {
     
     func deliverLockInfo(lockInfo: LockInfo) {
         DispatchQueue.main.async {
-            self.classRoomView.spinner.dismiss(afterDelay: 0, animated: true) {
-                self.classRoomView.classImageView.isHidden = false
-                self.classRoomView.descriptionLabel.isHidden = false
-                self.classRoomView.openTheDoorButton.isHidden = false
-                
-                self.classRoomView.classImageView.sd_setImage(with: URL(string: self.lock.preview)!)
-            }
+            self.classRoomView.spinner.dismiss()
+            self.classRoomView.classImageView.sd_setImage(with: URL(string: self.lock.preview)!)
         }
     }
 }

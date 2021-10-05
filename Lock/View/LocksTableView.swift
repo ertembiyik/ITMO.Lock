@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class LocksTableView: UIView {
     
     // MARK: - UI
+    lazy var spinner = JGProgressHUD(style: .dark)
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.tableFooterView = UIView()
