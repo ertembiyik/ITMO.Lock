@@ -24,5 +24,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Что бы открыть замок нам потребуется Bluetooth</string>
 </dict>
 </plist>

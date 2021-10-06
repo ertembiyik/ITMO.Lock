@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import TTLock
 
 class ClassRoomViewController: UIViewController {
 
@@ -17,7 +18,7 @@ class ClassRoomViewController: UIViewController {
     
     private let lock: LockModel
     
-    private let lockInfo: LockInfo
+    private var lockInfo: LockInfo
     
     // MARK: - Lifecycle
     init(lock: LockModel) {
@@ -38,7 +39,9 @@ class ClassRoomViewController: UIViewController {
         super.viewDidLoad()
         setNavVar()
         networkManager.delegate = self
+        self.classRoomView.classImageView.sd_setImage(with: URL(string: self.lock.preview)!)
         classRoomView.spinner.show(in: self.view, animated: true, afterDelay: 2)
+        classRoomView.openTheDoorButton.addTarget(self, action: #selector(openTheDoorButtonDidTapped), for: .touchUpInside)
         networkManager.getLockInfo(lockId: lock.id)
     }
     
@@ -67,6 +70,16 @@ class ClassRoomViewController: UIViewController {
         vc.title = title
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc private func openTheDoorButtonDidTapped() {
+        TTLock.controlLock(with: TTControlAction.actionUnlock, lockData: lockInfo.token, success: { _, _, _ in
+            print("success")
+        }, failure: { _, errorMessage in
+            self.showAlert(with: "Ошибка", message: "Не удалось открыть замок, попробуйте снова и убедитесь что включен Bluetooth", style: .alert)
+            print("Error: \(errorMessage ?? "")")
+        }
+        )
+    }
 }
 
 // MARK: - Extensions
@@ -81,7 +94,7 @@ extension ClassRoomViewController: NetworkManagerDelegate {
     func deliverLockInfo(lockInfo: LockInfo) {
         DispatchQueue.main.async {
             self.classRoomView.spinner.dismiss()
-            self.classRoomView.classImageView.sd_setImage(with: URL(string: self.lock.preview)!)
+            self.lockInfo = lockInfo
         }
     }
 }

@@ -8,6 +8,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import SDWebImage
+import TTLock
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,6 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         keyboardManager.enableAutoToolbar = true
         
         SDImageCache.shared.config.shouldCacheImagesInMemory = true
+        
+        TTLock.setupBluetooth({ state in
+            print("TTLock is working, bluetooth state: \(state)")
+        })
         
         UINavigationBar.appearance().tintColor = .white
         window.makeKeyAndVisible()
