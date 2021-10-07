@@ -34,6 +34,7 @@ class LocksTableViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         locksTableView.tableView.frame = view.bounds
+        locksTableView.noLocksLabel.frame = view.layoutMarginsGuide.layoutFrame
     }
     
     // MARK: - Functions
@@ -100,9 +101,18 @@ extension LocksTableViewController: NetworkManagerDelegate {
     
     func deliverLocks(locks: [LockModel]) {
         DispatchQueue.main.async {
+            
             self.locksTableView.spinner.dismiss()
-            self.locks = locks
-            self.locksTableView.tableView.reloadData()
+            
+            if locks.isEmpty {
+                self.locksTableView.noLocksLabel.isHidden = false
+                self.locksTableView.tableView.isHidden = true
+            } else {
+                self.locksTableView.noLocksLabel.isHidden = true
+                self.locksTableView.tableView.isHidden = false
+                self.locks = locks
+                self.locksTableView.tableView.reloadData()
+            }
         }
     }
     

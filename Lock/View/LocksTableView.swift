@@ -27,6 +27,17 @@ class LocksTableView: UIView {
         return button
     }()
     
+    lazy var noLocksLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.text = "Вы не добавлены ни в одну аудиторию. Пожалуйста свяжитесь с администраторами."
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
+    }()
+    
     // MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -34,6 +45,7 @@ class LocksTableView: UIView {
         tableView.backgroundColor = Constants.themeBackGroundColor
         tableView.separatorStyle = .none
         addSubview(tableView)
+        addSubview(noLocksLabel)
         setConstraints()
     }
     
