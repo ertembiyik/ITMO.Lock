@@ -25,6 +25,7 @@ class ClassRoomView: UIView {
         imageView.layer.borderWidth = 4
         imageView.contentMode = .scaleAspectFit
         imageView.layer.borderColor = UIColor(red: 0.98, green: 0.10, blue: 0.63, alpha: 1.0).cgColor
+        imageView.isHidden = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -36,6 +37,7 @@ class ClassRoomView: UIView {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.textColor = UIColor(red: 0.57, green: 0.58, blue: 0.61, alpha: 1.0)
+        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -47,6 +49,7 @@ class ClassRoomView: UIView {
         button.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 22)
         button.titleLabel?.textColor = .white
         button.backgroundColor  = UIColor(red: 0.40, green: 0.09, blue: 0.96, alpha: 1.0)
+        button.isHidden = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

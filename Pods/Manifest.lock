@@ -4,12 +4,14 @@ PODS:
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
+  - SPIndicator (1.4.1)
   - TTLock (3.1.9)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
   - JGProgressHUD
   - SDWebImage
+  - SPIndicator
   - TTLock
 
 SPEC REPOS:
@@ -17,14 +19,16 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - JGProgressHUD
     - SDWebImage
+    - SPIndicator
     - TTLock
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SPIndicator: 390446852611bcebb4e69b1f5229f2c27026328f
   TTLock: a8a0db90d25e776ce5217c514fe6af1afda85de0
 
-PODFILE CHECKSUM: e58ff80bba853296634c7a28b3422a2a5a5183de
+PODFILE CHECKSUM: d6895b8d6473337a59bbd0a06ccd735ec323445f
 
 COCOAPODS: 1.10.0

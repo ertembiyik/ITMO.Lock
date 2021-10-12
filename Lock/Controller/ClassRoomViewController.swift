@@ -8,6 +8,7 @@
 import UIKit
 import SDWebImage
 import TTLock
+import SPIndicator
 
 class ClassRoomViewController: UIViewController {
 
@@ -40,8 +41,9 @@ class ClassRoomViewController: UIViewController {
         setNavVar()
         networkManager.delegate = self
         self.classRoomView.classImageView.sd_setImage(with: URL(string: self.lock.preview)!)
-        classRoomView.spinner.show(in: self.view, animated: true, afterDelay: 2)
+        classRoomView.spinner.show(in: self.view, animated: false)
         classRoomView.openTheDoorButton.addTarget(self, action: #selector(openTheDoorButtonDidTapped), for: .touchUpInside)
+        
         networkManager.getLockInfo(lockId: lock.id)
     }
     
@@ -72,11 +74,20 @@ class ClassRoomViewController: UIViewController {
     }
     
     @objc private func openTheDoorButtonDidTapped() {
-        TTLock.controlLock(with: TTControlAction.actionUnlock, lockData: lockInfo.token, success: { _, _, _ in
-            print("success")
-        }, failure: { _, errorMessage in
-            self.showAlert(with: "Ошибка", message: "Не удалось открыть замок, попробуйте снова и убедитесь что включен Bluetooth", style: .alert)
-            print("Error: \(errorMessage ?? "")")
+        classRoomView.spinner.show(in: self.view)
+        
+        TTLock.controlLock(with: TTControlAction.actionUnlock, lockData: lockInfo.token, success: { [weak self] _, _, _ in
+            SPIndicator.present(title: "Замок открыта", preset: .done)
+            self?.classRoomView.spinner.dismiss()
+        }, failure: { [weak self] error, errorMessage in
+            self?.classRoomView.spinner.dismiss()
+            if error == .bluetoothPoweredOff {
+                self?.showAlert(with: "Ошибка", message: "Включите bluetooth чтобы открыть замок", style: .alert)
+            } else {
+                SPIndicator.present(title: "Не получилось открыть замок", preset: .error)
+            }
+            
+            print("Error: \(errorMessage ?? "")", error)
         }
         )
     }
@@ -94,6 +105,9 @@ extension ClassRoomViewController: NetworkManagerDelegate {
     func deliverLockInfo(lockInfo: LockInfo) {
         DispatchQueue.main.async {
             self.classRoomView.spinner.dismiss()
+            self.classRoomView.classImageView.isHidden = false
+            self.classRoomView.openTheDoorButton.isHidden = false
+            self.classRoomView.descriptionLabel.isHidden = false
             self.lockInfo = lockInfo
         }
     }
